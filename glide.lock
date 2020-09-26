@@ -1,0 +1,57 @@
+hash: 638cedff07b113610ad338aeaf5e283f3197cfae26d272600026db8167af22d3
+updated: 2020-09-26T16:41:14.200551+01:00
+imports:
+- name: github.com/360EntSecGroup-Skylar/excelize
+  version: 89465f41b5a29ac2e1debe16b8cb6f59c344f917
+- name: github.com/alexflint/go-arg
+  version: e9c71eb4fa701960bd054d4034d155717aef8373
+- name: github.com/alexflint/go-scalar
+  version: 6638fbbc28f9ad0136ef5fd84a15c995e08e161f
+- name: github.com/mattn/go-runewidth
+  version: 14e809f6d78fcf9f48ff9b70981472b64c05f754
+- name: github.com/mohae/deepcopy
+  version: c48cc78d482608239f6c4c92a4abd87eb8761c90
+- name: github.com/richardlehane/mscfb
+  version: 961a19b8ef4b9e5ddf8b8c19cda4984a81a2eecd
+- name: github.com/richardlehane/msoleps
+  version: c5f2e09be624c234b2ad655d79d029de6ebf0e54
+  subpackages:
+  - types
+- name: github.com/xlab/termtables
+  version: 649d05e1d055d1da7ce101e6f53caa2c43868e15
+  subpackages:
+  - term
+- name: github.com/xuri/efp
+  version: ba689101faaf67e0ce42ca6604e1e9b66a7fdc02
+- name: golang.org/x/crypto
+  version: 5c72a883971a4325f8c62bf07b6d38c20ea47a6a
+  subpackages:
+  - md4
+  - ripemd160
+- name: golang.org/x/net
+  version: 05aa5d4ee32165add31ddef9d5d3946713e5dc5e
+  subpackages:
+  - html
+  - html/atom
+  - html/charset
+- name: golang.org/x/text
+  version: a8b4671254579a87fadf9f7fa577dc7368e9d009
+  subpackages:
+  - encoding
+  - encoding/charmap
+  - encoding/htmlindex
+  - encoding/internal
+  - encoding/internal/identifier
+  - encoding/japanese
+  - encoding/korean
+  - encoding/simplifiedchinese
+  - encoding/traditionalchinese
+  - encoding/unicode
+  - internal/language
+  - internal/language/compact
+  - internal/tag
+  - internal/utf8internal
+  - language
+  - runes
+  - transform
+testImports: []
