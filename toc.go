@@ -14,6 +14,7 @@ func getTocTransactions(filename string) (tran *[]transaction, err error) {
 	const tocSheetHeadingFirstColumn = "Conta"
 	const tocSheetAmountColumn = 12
 	const tocSheetDateColumn = 13
+	const tocSheetDescriptionColumn = 7
 
 	startLineFound := false
 	var rs []transaction
@@ -40,6 +41,7 @@ func getTocTransactions(filename string) (tran *[]transaction, err error) {
 			if err != nil {
 				return nil, errors.New("Cannot convert date: " + err.Error())
 			}
+			t.Description = row[tocSheetDescriptionColumn]
 			rs = append(rs, t)
 		} else if len(row) != 0 {
 			if row[0] == tocSheetHeadingFirstColumn {

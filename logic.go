@@ -9,14 +9,15 @@ func reconcile(a []transaction, b []transaction) (r []report, err error) {
 	var oneRecord report
 	var allRecords []report
 
-	for _, banktr := range a {
-		bankDate := banktr.Date
-		bankAmount := banktr.Amount
+	for _, atr := range a {
+		aDate := atr.Date
+		aAmount := atr.Amount
+		aDescr := atr.Description
 
 		found := false
 
-		for _, toctr := range b {
-			if toctr.Amount == bankAmount && toctr.Date == bankDate {
+		for _, btr := range b {
+			if btr.Amount == aAmount {
 				found = true
 				break
 			}
@@ -24,8 +25,9 @@ func reconcile(a []transaction, b []transaction) (r []report, err error) {
 
 		if found == false {
 			oneRecord.Comment = "Not found"
-			oneRecord.TransactionDetails.Amount = bankAmount
-			oneRecord.TransactionDetails.Date = bankDate
+			oneRecord.TransactionDetails.Amount = aAmount
+			oneRecord.TransactionDetails.Date = aDate
+			oneRecord.TransactionDetails.Description = aDescr
 			allRecords = append(allRecords, oneRecord)
 		}
 	}

@@ -44,12 +44,11 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	renderResult(resultA, "Reconcile TOC online")
+	renderResult(resultA, "Reconcile TOC online (compared to BCP)")
 
 	resultB, err := reconcile(*tocData, *bcpData)
 	if err != nil {
 		log.Fatal(err)
 	}
-	renderResult(resultB, "Reconcile Millennium BCP")
-
+	renderResult(resultB, "Reconcile Millennium BCP (compared to TOC Online)")
 }

@@ -10,4 +10,7 @@ build:
 clean:
 	@rm -Rf ./vendor ./bin
 
-all: clean deps build
+install: build
+	@cp bin/* ~/Bin
+
+all: clean deps build install
