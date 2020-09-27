@@ -5,9 +5,10 @@ const (
 	layoutUS  = "January 2, 2006"
 )
 
-func reconcile(a []transaction, b []transaction) (r []report, err error) {
-	var oneRecord report
-	var allRecords []report
+// Returns those transactions which cannot be matched against "a"
+func reconcileAmounts(a []transaction, b []transaction) (r []transaction, err error) {
+	var oneRecord transaction
+	var allRecords []transaction
 
 	for _, atr := range a {
 		aDate := atr.Date
@@ -24,10 +25,9 @@ func reconcile(a []transaction, b []transaction) (r []report, err error) {
 		}
 
 		if found == false {
-			oneRecord.Comment = "Not found"
-			oneRecord.TransactionDetails.Amount = aAmount
-			oneRecord.TransactionDetails.Date = aDate
-			oneRecord.TransactionDetails.Description = aDescr
+			oneRecord.Amount = aAmount
+			oneRecord.Date = aDate
+			oneRecord.Description = aDescr
 			allRecords = append(allRecords, oneRecord)
 		}
 	}

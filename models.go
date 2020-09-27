@@ -9,8 +9,3 @@ type transaction struct {
 	Date        time.Time
 	Description string
 }
-
-type report struct {
-	TransactionDetails transaction
-	Comment            string
-}

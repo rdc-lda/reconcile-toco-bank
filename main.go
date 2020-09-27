@@ -35,20 +35,27 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// Get data from BCP CSV sheet
 	bcpData, err := getBCPTransactions(args.BCPSheet)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	resultA, err := reconcile(*bcpData, *tocData)
+	// Reconcile TOC against BCP
+	missingTocTrns, err := reconcileAmounts(*bcpData, *tocData)
 	if err != nil {
 		log.Fatal(err)
 	}
-	renderResult(resultA, "Reconcile TOC online (compared to BCP)")
 
-	resultB, err := reconcile(*tocData, *bcpData)
+	// Reconcile BCP against TOC
+	missingBCPTrns, err := reconcileAmounts(*tocData, *bcpData)
 	if err != nil {
 		log.Fatal(err)
 	}
-	renderResult(resultB, "Reconcile Millennium BCP (compared to TOC Online)")
+
+	// Output
+	renderMissingTrnResult(missingTocTrns,
+		"These amounts were not found TOC online (compared to BCP)")
+	renderMissingTrnResult(missingBCPTrns,
+		"These amounts were not found in BCP Millennium (compared to TOC)")
 }

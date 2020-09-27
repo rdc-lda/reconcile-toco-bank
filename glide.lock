@@ -1,5 +1,5 @@
 hash: 638cedff07b113610ad338aeaf5e283f3197cfae26d272600026db8167af22d3
-updated: 2020-09-26T16:41:14.200551+01:00
+updated: 2020-09-27T10:16:37.779356+01:00
 imports:
 - name: github.com/360EntSecGroup-Skylar/excelize
   version: 89465f41b5a29ac2e1debe16b8cb6f59c344f917
@@ -29,7 +29,7 @@ imports:
   - md4
   - ripemd160
 - name: golang.org/x/net
-  version: 05aa5d4ee32165add31ddef9d5d3946713e5dc5e
+  version: 5d4f7005572804eaf7f5ecdd2473a62557f733ba
   subpackages:
   - html
   - html/atom
